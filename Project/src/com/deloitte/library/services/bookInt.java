@@ -9,5 +9,7 @@ public interface bookInt {
 	
 	public Book addBook(String author,double price,String book_Name) throws SQLException;
 	public List<Book> Display() throws SQLException;
+	public List<Book> SearchBook(String book_Name) throws SQLException;
+	public boolean bookdelete(int deleteId) throws SQLException;
 
 }

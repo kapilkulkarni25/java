@@ -87,4 +87,41 @@ public static int getCounter() throws SQLException
 	}
 	
 			}
+
+public static List<Book> Searchbooks(String bookName) throws SQLException {
+	Connection connect=connection();
+	PreparedStatement stmt;
+	stmt=connect.prepareStatement("select Book_Name from Book where book_Name= ?");
+	stmt.setString(1,bookName);
+	ResultSet rs= stmt.executeQuery();
+	while(rs.next())
+	{
+		Book book = new Book();
+		
+		Book.setBook_Id(rs.getInt(1));
+		book.setAuthor_Name(rs.getString(2));
+		book.setPrice(rs.getDouble(3));
+		book.setBook_name(rs.getString(4));;
+		arr.add(book);
+
+	}
+	return arr;
+	
+	// TODO Auto-generated method stub
+	
+}
+
+public static boolean bookDelete(int bookId) throws SQLException {
+	// TODO Auto-generated method stub
+	Connection connect=connection();
+	PreparedStatement stmt =connect.prepareStatement("delete from Book where BookId = ?");
+	stmt.setInt(1,bookId);
+	int affected = stmt.executeUpdate();
+	if(affected > 0)
+	{
+		return true;
+	}
+	return false;
+}
+
 }

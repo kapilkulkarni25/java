@@ -31,6 +31,17 @@ public class booksimpl implements bookInt{
 	
 	}
 
+	public List<Book> SearchBook(String book_Name) throws SQLException {
+		// TODO Auto-generated method stub
+		 return BooksDAO.Searchbooks(book_Name);
+		
+	}
+	public boolean bookdelete(int deleteId) throws SQLException
+	{
+		return BooksDAO.bookDelete(deleteId);
+	}
+	
+
 
 	
 }
