@@ -15,7 +15,7 @@ public class bookDemo {
 		
 	String author;
 	String book_Name;
-	double price ;
+	double price;
 	Scanner sc= new Scanner(System.in);
 	int option;
 	while (true)
@@ -79,8 +79,7 @@ public class bookDemo {
 		case 5:
 			System.exit(0);
 			break;
-			
-			
+						
 	}
 	}
 }

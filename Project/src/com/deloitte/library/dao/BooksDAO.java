@@ -56,8 +56,7 @@ public static List<Book> Display() throws SQLException
 	ResultSet rs = stmt.executeQuery();
 	while(rs.next())
 	{
-		Book book = new Book();
-		
+	Book book = new Book();
 	Book.setBook_Id(rs.getInt(1));
 	book.setAuthor_Name(rs.getString(2));
 	book.setPrice(rs.getDouble(3));
